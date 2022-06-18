@@ -1,0 +1,357 @@
+
+/* ==========================
+    Fix Internet Explorer:
+ ========================== */
+
+
+/* Fix edge of screen on IE */
+html, body{
+    height:  100%;
+    width:   100%;
+    margin:  0px;
+    padding: 0px;
+
+    overflow:auto;
+
+}
+
+
+/* Fix images on IE */
+img{
+    border-style:none;
+    margin:  0px;
+    padding: 0px;
+}
+
+
+/* Fix tables on IE */
+tr, td{
+    margin:  0px;
+    padding: 0px;
+}
+
+
+/* Fix non-breaking space on IE */
+nobr{
+    white-space:nowrap;
+}
+.nobr{
+    white-space:nowrap;
+}
+
+
+/* The old clearfix trick to use with float */
+.clearfix {
+    overflow: auto;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+
+/* =============================
+    Font:
+ ============================= */
+
+
+
+
+
+
+/* Always works, except for when I'm doing a demo or interview */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*/
+
+
+
+/* Better safe than sorry */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../vendor/google-fonts/roboto/Roboto-Regular.ttf) format('truetype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* We're just going to use Roboto everywhere, so I don't forget to use it somewhere and mess up the test */
+body{
+    font-family: Roboto, Arial, Helvetica, sans-serif; /* Roboto, but also fallback fonts */
+}
+
+
+
+
+
+
+/* =============================
+    Styles for Example Form:
+ ============================= */
+
+
+body{
+
+    /* Make the background look like the sky */
+    /*
+        #B3E5FC = MD Light Blue 100
+        #4FC3F7 = MD Light Blue 300
+    */
+    background-image:
+            radial-gradient(at 80% 40px,#FFF, rgba(255,255,255,0), rgba(255,255,255,0) ),
+            linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0), #FFF),
+            radial-gradient(#B3E5FC, #B3E5FC, #4FC3F7);
+
+
+    /* Up-down scrolling only, No left-right scrolling */
+    overflow-x:hidden;
+
+
+    /* Default text color */
+    color: #212121; /* #212121 = MD Gray 900 */
+}
+
+
+form.example-form{
+    /* Center the form */
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    /* Top-Bottom buffer */
+    margin-top: 9ex;
+    margin-bottom: 21ex;
+
+
+
+    /* Form Background */
+    background-color: #f8fafa; /* #f8fafa = IBM-1 Cool White 2 */
+    min-height: 50ex;
+    border-radius: 27px;
+
+
+    /* Form Shadow */
+    /*
+        #f0f4f4 = IBM-1 Cool White 4
+    */
+    box-shadow:
+            0px 0px 0px  2px #f0f4f4,
+            0px 4px 15px 0px rgba(0,0,0,0.3);
+
+
+
+    padding: 3ex 2em;
+
+}
+
+
+
+form.example-form section{
+    display: block;
+    margin-top: 5ex;
+}
+
+
+/* The colored objects should only be displayed if that color is the selected */
+form.example-form[data-color] section[data-question="2"] span[data-color]{
+    display: none; /* Comment this out if you want to test it will all the colored objects visible */
+}
+form.example-form[data-color="red"]    section[data-question="2"] span[data-color="red"]{    display: inline;}
+form.example-form[data-color="blue"]   section[data-question="2"] span[data-color="blue"]{   display: inline;}
+form.example-form[data-color="green"]  section[data-question="2"] span[data-color="green"]{  display: inline;}
+form.example-form[data-color="yellow"] section[data-question="2"] span[data-color="yellow"]{ display: inline;}
+
+
+
+
+/* Better looking input */
+[data-better-looking-input="yes"]{
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    border-top: solid 1px #888;
+    border-right: solid 2px #aaa;
+    border-left: solid 2px #aaa;
+    border-bottom: solid 1px #bbb;
+    background: linear-gradient(#CCC, #F0F0F0 2px, #FFF 5px, #FFF);
+    font-size:12pt;
+    border-radius:5px;
+    margin:10px;
+
+    font-family: Roboto, Arial, Helvetica, sans-serif; /* Roboto, but also fallback fonts */
+    color: #212121; /* #212121 = MD Gray 900 */
+}
+[data-better-looking-input="yes"][type="number"]{
+    width: 4em;
+}
+
+
+/* Submit Button*/
+.example-form-submit-button{
+    /* Button background */
+    display: inline-block;
+    background-image: linear-gradient(to bottom, #0288D1, #0277BD); /* #0288D1 = MD Light Blue 700, #0277BD = MD Light Blue 800 */
+    margin: 1em;
+    padding: 1.3ex 1.3em;
+    border-radius: 7px;
+    box-shadow:
+        0px  2px 1px 1px #01579B,
+        0px -1px 1px 1px #039BE5;
+        /* #01579B = MD Light Blue 900, #039BE5 = MD Light Blue 600 */
+
+    /* Button text */
+    color: #fbfcfc; /* #fbfcfc = IBM-1 Cool White 1 */
+    font-family: Roboto, Arial, Helvetica, sans-serif; /* Roboto, but also fallback fonts */
+
+    /* Act like a button, not selectable text */
+    cursor:                pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select:   none;
+    -khtml-user-select:    none;
+    -moz-user-select:      none;
+    -ms-user-select:       none;
+    user-select:           none;
+
+    /* Transition */
+    transition-property:   all;
+    transition-duration:   0.4s;
+}
+.example-form-submit-button:hover {
+    background-image: linear-gradient(to bottom, #039BE5, #0288D1); /*  #0277BD = MD Light Blue 600, #0288D1 = MD Light Blue 700 */
+    color: #fff;
+}
+
+
+
+
+[data-custom-element="color-dropdown"]{
+    display: inline-block;
+    width: 8em;
+    position: relative;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select:   none;
+    -khtml-user-select:    none;
+    -moz-user-select:      none;
+    -ms-user-select:       none;
+    user-select:           none;
+
+    padding-left: 0px;
+}
+
+[data-custom-element="color-dropdown"] [data-custom-input-part="color-dropdown-caret"]{
+    position: absolute;
+    right: 5px;
+    top: 0.55ex;
+    color: #757575; /* #757575 = MD Gray 600 */
+
+    pointer-events: none; /* Allows click events on icon to pass through to item underneath. */
+
+    -webkit-touch-callout: none;
+    -webkit-user-select:   none;
+    -khtml-user-select:    none;
+    -moz-user-select:      none;
+    -ms-user-select:       none;
+    user-select:           none;
+}
+
+
+
+[data-custom-element="color-dropdown"] [data-custom-input-part="color-dropdown-box-option"]{
+    position: relative;
+    display: none;
+}
+[data-custom-element="color-dropdown"][data-color="red"] [data-custom-input-part="color-dropdown-box-option"][data-color="red"],
+[data-custom-element="color-dropdown"][data-color="blue"] [data-custom-input-part="color-dropdown-box-option"][data-color="blue"],
+[data-custom-element="color-dropdown"][data-color="green"] [data-custom-input-part="color-dropdown-box-option"][data-color="green"],
+[data-custom-element="color-dropdown"][data-color="yellow"] [data-custom-input-part="color-dropdown-box-option"][data-color="yellow"]{
+    display: inline;
+}
+
+
+
+[data-custom-element="color-dropdown"] [data-custom-input-part="color-dropdown-swatch"]{
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 0.25ex;
+
+    height: 2ex;
+    width: 1em;
+    border-radius: 3px;
+
+    background-color: #BDBDBD; /* #BDBDBD = MD Gray 400 */
+}
+[data-custom-element="color-dropdown"] [data-color="red"] [data-custom-input-part="color-dropdown-swatch"]{
+    background-color: #f5222d; /* #f5222d = Ant Red 6 */
+}
+[data-custom-element="color-dropdown"] [data-color="blue"] [data-custom-input-part="color-dropdown-swatch"]{
+    background-color: #03A9F4; /* #03A9F4 = MD Light Blue 500 */
+}
+[data-custom-element="color-dropdown"] [data-color="green"] [data-custom-input-part="color-dropdown-swatch"]{
+    background-color: #00aa5e; /* #00aa5e = IBM-1 Green 40 */
+}
+[data-custom-element="color-dropdown"] [data-color="yellow"] [data-custom-input-part="color-dropdown-swatch"]{
+    background-color: #FFEB3B; /* #FFEB3B = MD Yellow 500 */
+}
+
+[data-custom-element="color-dropdown"] [data-custom-input-part="color-dropdown-option-text"]{
+    position: relative;
+    left: 1.6em;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select:   none;
+    -khtml-user-select:    none;
+    -moz-user-select:      none;
+    -ms-user-select:       none;
+    user-select:           none;
+}
+
+
+[data-custom-element="color-dropdown"] [data-custom-input-part="color-dropdown-tray"]{
+    /* background: linear-gradient(#CCC, #F0F0F0 2px, #FFF 5px, #FFF);*/
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+[data-custom-element="color-dropdown"][data-is-tray-open="no"] [data-custom-input-part="color-dropdown-tray"]{
+    display: none;
+}
+
+[data-custom-element="color-dropdown"] [data-custom-input-part="color-dropdown-tray-option"]{
+    position: relative;
+}
+
+
+[data-custom-element="color-dropdown"] [data-custom-input-part="color-dropdown-tray"] [data-custom-input-part="color-dropdown-tray-option"]{
+    display: block;
+}
+[data-custom-element="color-dropdown"] [data-custom-input-part="color-dropdown-tray"] [data-custom-input-part="color-dropdown-tray-option"]:hover{
+    background: #e3ecec;
+}
+
+
+
+
+
+
+
+[data-show="no"]{
+    display: none;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Format -->
+        <meta http-equiv="Content-Type"    content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <!-- Title -->
+        <title>Example Smart Form</title>
+
+        <!-- Viewport -->
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized"  content="width" />
+        <meta name="viewport"         content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scale=no" />
+
+        <!-- 3rd-Party Styles -->
+        <link rel="stylesheet" type="text/css" href="resources/vendor/sweetalert2-10.14.0/dist/sweetalert2.min.css" />
+        <link rel="stylesheet" type="text/css" href="resources/vendor/font-awesome-4.7.0/css/font-awesome.min.css" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="resources/css/example-form.css?version=0" />
+
+        <!-- 3rd-Party Scripts -->
+        <script type="text/javascript" src="resources/vendor/jquery/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="resources/vendor/sweetalert2-10.14.0/dist/sweetalert2.min.js"></script>
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="resources/js/example-form.js?version=1"></script>
+
+    </head>
+    <body>
+        <form class="example-form" data-color="none" data-number-range="none">
+            <!-- Well written-text that makes people want to fill out the form probably goes up here. -->
+
+
+
+
+
+            <!-- Questions -->
+
+            <!-- 1) -->
+            <section data-question="1">
+                <label>What color do you like best?</label>
+                <select data-show="no" id="example-form-color-dropdown" data-event="example-form >>> color-select">
+                    <option value="none"></option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+
+
+                <div data-custom-element="color-dropdown" data-better-looking-input="yes" data-is-tray-open="no" data-color="none" data-event="example-form >>> custom-color-dropdown-box">
+
+                    <i class="fa fa-caret-down" aria-hidden="true" data-custom-input-part="color-dropdown-caret" data-event="example-form >>> custom-color-dropdown-box"></i>
+
+                    <span data-custom-input-part="color-dropdown-box-option" data-color="red">
+                        <span data-custom-input-part="color-dropdown-swatch" data-color="red"></span>
+                        <span data-custom-input-part="color-dropdown-option-text">Red</span>
+                    </span>
+                    <span data-custom-input-part="color-dropdown-box-option" data-color="blue">
+                        <span data-custom-input-part="color-dropdown-swatch" data-color="blue"></span>
+                        <span data-custom-input-part="color-dropdown-option-text">Blue</span>
+                    </span>
+                    <span data-custom-input-part="color-dropdown-box-option" data-color="green">
+                        <span data-custom-input-part="color-dropdown-swatch" data-color="green"></span>
+                        <span data-custom-input-part="color-dropdown-option-text">Green</span>
+                    </span>
+                    <span data-custom-input-part="color-dropdown-box-option" data-color="yellow">
+                        <span data-custom-input-part="color-dropdown-swatch" data-color="yellow"></span>
+                        <span data-custom-input-part="color-dropdown-option-text">Yellow</span>
+                    </span>
+
+                    &nbsp;
+
+                    <div data-custom-input-part="color-dropdown-tray">
+                        <span data-custom-input-part="color-dropdown-tray-option" data-color="red" data-event="example-form >>> custom-color-dropdown-tray-option">
+                            <span data-custom-input-part="color-dropdown-swatch" data-color="red"></span>
+                            <span data-custom-input-part="color-dropdown-option-text">Red</span>
+                        </span>
+
+                        <span data-custom-input-part="color-dropdown-tray-option" data-color="blue" data-event="example-form >>> custom-color-dropdown-tray-option">
+                            <span data-custom-input-part="color-dropdown-swatch" data-color="blue"></span>
+                            <span data-custom-input-part="color-dropdown-option-text">Blue</span>
+                        </span>
+
+                        <span data-custom-input-part="color-dropdown-tray-option" data-color="green" data-event="example-form >>> custom-color-dropdown-tray-option">
+                            <span data-custom-input-part="color-dropdown-swatch" data-color="green"></span>
+                            <span data-custom-input-part="color-dropdown-option-text">Green</span>
+                        </span>
+
+                        <span data-custom-input-part="color-dropdown-tray-option" data-color="yellow" data-event="example-form >>> custom-color-dropdown-tray-option">
+                            <span data-custom-input-part="color-dropdown-swatch" data-color="yellow"></span>
+                            <span data-custom-input-part="color-dropdown-option-text">Yellow</span>
+                        </span>
+
+
+                    </div>
+                </div>
+
+
+
+            </section>
+
+
+            <!-- 2) -->
+            <section data-question="2">
+
+                <!-- If #1 is red -->
+                <span data-color="red">
+                    <div>What red object do you like best?</div>
+
+                    <input type="radio" name="colored-object" value="apple" id="example-form-colored-object-apple">
+                    <label for="example-form-colored-object-apple">Apple</label> <br/>
+
+                    <input type="radio" name="colored-object" value="firetruck" id="example-form-colored-object-firetruck">
+                    <label for="example-form-colored-object-firetruck">Firetruck</label> <br/>
+                </span>
+
+                <!-- If #1 is blue -->
+                <span data-color="blue">
+                    <div>What blue object do you like best?</div>
+
+                    <input type="radio" name="colored-object" value="water" id="example-form-colored-object-water">
+                    <label for="example-form-colored-object-water">Water</label> <br/>
+
+                    <input type="radio" name="colored-object" value="sky" id="example-form-colored-object-sky">
+                    <label for="example-form-colored-object-sky">Sky</label> <br/>
+                </span>
+
+                <!-- If #1 is green -->
+                <span data-color="green">
+                    <div>What green object do you like best?</div>
+
+
+                    <input type="radio" name="colored-object" value="grass" id="example-form-colored-object-grass">
+                    <label for="example-form-colored-object-grass">Grass</label> <br/>
+
+                    <input type="radio" name="colored-object" value="broccoli" id="example-form-colored-object-broccoli">
+                    <label for="example-form-colored-object-broccoli">Broccoli</label> <br/>
+                </span>
+
+                <!-- If #1 is yellow -->
+                <span data-color="yellow">
+                    <div>What yellow object do you like best?</div>
+
+
+                    <input type="radio" name="colored-object" value="sun" id="example-form-colored-object-sun">
+                    <label for="example-form-colored-object-sun">Sun</label> <br/>
+
+                    <input type="radio" name="colored-object" value="lemon" id="example-form-colored-object-lemon">
+                    <label for="example-form-colored-object-lemon">Lemon</label> <br/>
+                </span>
+
+
+            </section>
+
+            <!-- 3) -->
+            <section data-question="3">
+                <label for="example-form-birth-city">What city were you born?</label>
+                <input type="text" id="example-form-birth-city" data-better-looking-input="yes" />
+            </section>
+
+            <!-- 4) -->
+            <section data-question="4">
+                <label for="example-form-favorite-number">What is your favorite number?</label>
+                <input type="number" id="example-form-favorite-number" data-better-looking-input="yes" data-event="example-form >>> favorite-number" />
+            </section>
+
+            <!-- 5) -->
+            <section data-question="5">
+                <span id="example-form-number-range-display"></span>
+            </section>
+
+            <!-- 6) -->
+            <section data-question="6">
+                <label for="example-form-cool-or-funny">Tell me anything cool or funny in 2 or 3 sentences:</label> <br/>
+                <textarea id="example-form-cool-or-funny" rows="6" cols="40" data-better-looking-input="yes"></textarea>
+            </section>
+
+            <section>
+                <div class="example-form-submit-button" data-event="example-form >>> submit">Submit</div>
+            </section>
+
+        </form>
+
+    </body>
+</html>
